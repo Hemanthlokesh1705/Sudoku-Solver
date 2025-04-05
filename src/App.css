@@ -1,38 +1,287 @@
-.App {
+:root {
+  --primary-color: #4361ee;
+  --accent-color: #3a0ca3;
+  --success-color: #4cc9f0;
+  --warning-color: #f72585;
+  --light-bg: #f8f9fa;
+  --dark-text: #212529;
+  --border-color: #dee2e6;
+  --cell-highlight: #e9ecef;
+  --cell-active: #4361ee;
+  --cell-original: #f8f9fa;
+  --cell-solved: #d8f3dc;
+  --cell-same-value: #ffddd2;
+}
+
+/* App Layout */
+.sudoku-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app-header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-header p {
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  opacity: 0.8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Game Panel */
+.game-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
+}
+
+/* Board Container */
+.board-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.board-wrapper {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+}
+
+.board-wrapper h2 {
+  margin-top: 0;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Game Controls */
+.game-controls {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.controls-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.controls-body {
+  padding: 20px;
+}
+
+.controls-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.difficulty-selector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.difficulty-selector label {
+  font-weight: 500;
+  width: 80px;
+}
+
+.difficulty-selector select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+}
+
+.control-button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.new-game {
+  background-color: var(--primary-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.check-solution {
+  background-color: var(--success-color);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reset {
+  background-color: #fb8500;
+  color: white;
+}
+
+.solve {
+  background-color: #4895ef;
+  color: white;
+}
+
+.clear {
+  background-color: #adb5bd;
+  color: white;
+}
+
+/* Message Boxes */
+.error-message, .success-message {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  background-color: #ffccd5;
+  color: #d90429;
+  border-left: 5px solid #d90429;
+}
+
+.success-message {
+  background-color: #d8f3dc;
+  color: #2d6a4f;
+  border-left: 5px solid #2d6a4f;
+}
+
+/* How To Play */
+.how-to-play {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.how-to-play h2 {
+  color: var(--accent-color);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.how-to-play ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.how-to-play li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Sudoku Board */
+.sudoku-board {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  gap: 0;
+  border: 2px solid var(--dark-text);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.sudoku-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0;
+}
+
+.sudoku-cell {
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Different cell states */
+.sudoku-cell.original {
+  background-color: var(--cell-original);
+  font-weight: bold;
+}
+
+.sudoku-cell.active {
+  background-color: var(--cell-active);
+  color: white;
+}
+
+.sudoku-cell.highlighted {
+  background-color: var(--cell-highlight);
+}
+
+.sudoku-cell.same-value {
+  background-color: var(--cell-same-value);
+}
+
+.sudoku-cell.solved {
+  background-color: var(--cell-solved);
+}
+
+/* Number Pad */
+.number-pad {
+  margin-top: 20px;
+}
+
+.number-row {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.num-button, .clear-button {
+  flex: 1;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  font-size: 1.2rem;
 }
