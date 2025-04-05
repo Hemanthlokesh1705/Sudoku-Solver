@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sudoku-solver/static/css/main.f23b94a9.css",
-    "main.js": "/sudoku-solver/static/js/main.41372068.js",
-    "static/js/453.244ee3b7.chunk.js": "/sudoku-solver/static/js/453.244ee3b7.chunk.js",
-    "index.html": "/sudoku-solver/index.html",
-    "main.f23b94a9.css.map": "/sudoku-solver/static/css/main.f23b94a9.css.map",
-    "main.41372068.js.map": "/sudoku-solver/static/js/main.41372068.js.map",
-    "453.244ee3b7.chunk.js.map": "/sudoku-solver/static/js/453.244ee3b7.chunk.js.map"
+    "main.css": "/Sudoku-Solver/static/css/main.f23b94a9.css",
+    "main.js": "/Sudoku-Solver/static/js/main.fd29c1e2.js",
+    "static/js/453.244ee3b7.chunk.js": "/Sudoku-Solver/static/js/453.244ee3b7.chunk.js",
+    "index.html": "/Sudoku-Solver/index.html",
+    "main.f23b94a9.css.map": "/Sudoku-Solver/static/css/main.f23b94a9.css.map",
+    "main.fd29c1e2.js.map": "/Sudoku-Solver/static/js/main.fd29c1e2.js.map",
+    "453.244ee3b7.chunk.js.map": "/Sudoku-Solver/static/js/453.244ee3b7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f23b94a9.css",
-    "static/js/main.41372068.js"
+    "static/js/main.fd29c1e2.js"
   ]
 }
